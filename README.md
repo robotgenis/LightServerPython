@@ -6,8 +6,8 @@
 
 ## MAIN LEVEL
 
-timestamp: float - latest update time
-active: current active elements
+[] timestamp: float - latest update time
+[] active: current active elements
 
 ## TYPES
 
