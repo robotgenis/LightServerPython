@@ -7,18 +7,21 @@
 ## MAIN LEVEL
 
 - timestamp: float - latest update time
-- active: current active actions
+- active: element[] - current active actions
 
 ## TYPES
 
-### action
-- selection: selection[]
+### element - anything that can be put in active
 
-### color
-- type: "rgb" @Future "hsv
-- value: integer[3] - range[0-255]
+### action: element
+- type: string - specific type of the action
+- selection: selection[]
 
 ### fill: action
 - color: color
 
 ### selection: string
+
+### color
+- type: "rgb" @Future "hsv"
+- value: integer[3] - range[0-255]
