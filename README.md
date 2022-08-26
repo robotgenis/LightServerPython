@@ -9,11 +9,10 @@
 - timestamp: float - latest update time
 - active: current active actions
 
-## CATEGORIES
+## TYPES
+
 ### action
 - selection: selection[]
-
-## TYPES
 
 ### color
 - type: "rgb" @Future "hsv
