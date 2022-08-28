@@ -8,6 +8,7 @@
 
 - timestamp: float - latest update time
 - active: element[] - current active actions
+- presets: element[] - presets for easier use
 
 ## TYPES
 
@@ -19,8 +20,14 @@
 
 ### fill: action
 - color: color
+Inherited
+- type: "fill"
+- selection: selection[]
 
-### selection: string
+### selection
+- name: string
+- startIndex (optional): int
+- endIndex (optional): int
 
 ### color
 - type: "rgb" @Future "hsv"
