@@ -1,0 +1,57 @@
+{
+	"index": ["active"],
+	"value":[
+		{
+			"type": "animationFill",
+			"id": "fill1",
+			"selection": [{"name":"vertical"}],
+			"colorAnimation": {
+				"type": "rgb",
+				"value": [
+					[{"type":"transformation","points":[[0,0], [1.0, 128], [1.5,0], [2.0, 0]]}],
+					[{"type":"transformation","points":[[0,0], [2.0, 0]]}],
+					[{"type":"transformation","points":[[0,0], [2.0, 0]]}]
+				]
+			}
+		},
+		{
+			"type": "animationFill",
+			"id": "fill2",
+			"selection": [{"name":"line"}],
+			"colorAnimation": {
+				"type": "rgb",
+				"value": [
+					[{"type":"transformation","points":[[0,0], [0.5,0], [1.5, 128], [2.0, 0]]}],
+					[{"type":"transformation","points":[[0,0], [2.0, 0]]}],
+					[{"type":"transformation","points":[[0,0], [2.0, 0]]}]
+				]
+			}
+		},
+		{
+			"type": "animationFill",
+			"id": "fill3",
+			"selection": [{"name":"hexagon"}, {"name":"x"}],
+			"colorAnimation": {
+				"type": "rgb",
+				"value": [
+					[{"type":"transformation","points":[[0,128], [0.5,0], [1,0], [2, 128]]}],
+					[{"type":"transformation","points":[[0,0], [2.0, 0]]}],
+					[{"type":"transformation","points":[[0,0], [2.0, 0]]}]
+				]
+			}
+		},
+		{
+			"type": "animationFill",
+			"id": "fill4",
+			"selection": [{"name":"bed"}],
+			"colorAnimation": {
+				"type": "rgb",
+				"value": [
+					[{"type":"transformation","points":[[0,64], [0.5,128], [1,0], [1.5, 0],[2, 64]]}],
+					[{"type":"transformation","points":[[0,0], [2.0, 0]]}],
+					[{"type":"transformation","points":[[0,0], [2.0, 0]]}]
+				]
+			}
+		}
+	]
+}

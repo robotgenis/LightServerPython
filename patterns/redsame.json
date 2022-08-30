@@ -1,0 +1,18 @@
+{
+	"index": ["active"],
+	"value":[
+		{
+			"type": "animationFill",
+			"id": "fill1",
+			"selection": [{"name":"vertical"}, {"name":"line"},{"name":"hexagon"} , {"name":"x"}, {"name":"bed"}],
+			"colorAnimation": {
+				"type": "rgb",
+				"value": [
+					[{"type":"transformation","points":[[0,0], [1.0, 128], [1.5,0], [2.0, 0]]}],
+					[{"type":"transformation","points":[[0,0], [2.0, 0]]}],
+					[{"type":"transformation","points":[[0,0], [2.0, 0]]}]
+				]
+			}
+		}
+	]
+}
