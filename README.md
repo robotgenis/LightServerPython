@@ -14,7 +14,13 @@
 
 ### element - anything that can be put in active
 
-### action: element
+### abstract action: element
+- type: string - specific type of the action
+- selection: selection[]
+
+### abstract animation: action
+- id: string
+Inherited
 - type: string - specific type of the action
 - selection: selection[]
 
@@ -24,16 +30,21 @@ Inherited
 - type: "fill"
 - selection: selection[]
 
-### animationFill: action
+### animationStop: element
+- id (optional): string - id of animation to stop, if not present all will stop
+
+### animationFill: animation
 - colorAnimation: colorAnimation
-Inherited
+Override
 - type: "animation_fill"
+Inherited
+- id: string
 - selection: selection[]
 
-### colorAnimationRGB
-- r: Transformation[]
-- g: Transformation[]
-- b: Transformation[]
+### colorAnimation
+Notes: Last point in each transformation must be the same as the first point in the next one.
+- type: "rgb" @future "hsv"
+- value: [transformation[], transformation[], transformation[]] - [r, g, b] 
 
 ### selection
 - name: string
@@ -52,8 +63,8 @@ Inherited
 Override
 - type: "bezier"
 - points: point[4]
+- divisions: integer - default 10
 
 
-### point
-- x: number
-- y: number
+### point: array[2]
+- [x, y]

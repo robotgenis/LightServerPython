@@ -4,10 +4,10 @@ app = flask.Flask(__name__)
 
 
 data = {"active":[],"preset":{
-    "on":[{"type":"fill","color":{"type":"rgb","value":[130,80,60]},"selection":[{"name":"hexagon"}, {"name":"x"}]},{"type":"fill","color":{"type":"rgb","value":[0,0,0]},"selection":[{"name":"vertical"},{"name":"line"},{"name":"bed"}]}],
-    "daylight":[{"type":"fill","color":{"type":"rgb","value":[130,80,10]},"selection":[{"name":"hexagon"}, {"name":"x"}, {"name":"line"}]},{"type":"fill","color":{"type":"rgb","value":[0,0,0]},"selection":[{"name":"vertical"},{"name":"bed"}]}],    
-    "night":[{"type":"fill","color":{"type":"rgb","value":[0,0,1]},"selection":[{"name":"hexagon"},{"name":"bed"}, {"name":"line"}]},{"type":"fill","color":{"type":"rgb","value":[0,0,0]},"selection":[{"name":"vertical"},{"name":"x"}]}],
-    "off":[{"type":"fill","color":{"type":"rgb","value":[0,0,0]},"selection":[{"name":"vertical"},{"name":"line"},{"name":"hexagon"},{"name":"x"},{"name":"bed"}]}]
+    "on":[{"type": "animationStop"},{"type":"fill","color":{"type":"rgb","value":[130,80,60]},"selection":[{"name":"hexagon"}, {"name":"x"}]},{"type":"fill","color":{"type":"rgb","value":[0,0,0]},"selection":[{"name":"vertical"},{"name":"line"},{"name":"bed"}]}],
+    "daylight":[{"type": "animationStop"},{"type":"fill","color":{"type":"rgb","value":[130,80,10]},"selection":[{"name":"hexagon"}, {"name":"x"}, {"name":"line"}]},{"type":"fill","color":{"type":"rgb","value":[0,0,0]},"selection":[{"name":"vertical"},{"name":"bed"}]}],    
+    "night":[{"type": "animationStop"},{"type":"fill","color":{"type":"rgb","value":[0,0,1]},"selection":[{"name":"hexagon"},{"name":"bed"}, {"name":"line"}]},{"type":"fill","color":{"type":"rgb","value":[0,0,0]},"selection":[{"name":"vertical"},{"name":"x"}]}],
+    "off":[{"type": "animationStop"},{"type":"fill","color":{"type":"rgb","value":[0,0,0]},"selection":[{"name":"vertical"},{"name":"line"},{"name":"hexagon"},{"name":"x"},{"name":"bed"}]}]
 },"timestamp":time.time()}
 
 # use rgb or hsv?

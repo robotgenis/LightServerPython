@@ -1,0 +1,18 @@
+{
+	"index": ["active"],
+	"value":[
+		{
+			"type": "animationFill",
+			"id": "fill1",
+			"selection": [{"name":"vertical1"}],
+			"colorAnimation": {
+				"type": "rgb",
+				"value": [
+					[{"type":"transformation","points":[[0,0], [1.0, 255], [2,0], [3.0, 0]]}],
+					[{"type":"transformation","points":[[0,0], [1, 0], [2.0, 128], [3,0]]}],
+					[{"type":"transformation","points":[[0,128], [1, 0], [2.0, 0], [3,128]]}]
+				]
+			}
+		}
+	]
+}
