@@ -30,7 +30,7 @@
         "venv.bak{,/**}",
         ".vscode{,/**}"
     ],
-    "appService.defaultWebAppToDeploy": "",
+    "appService.defaultWebAppToDeploy": "None",
     "appService.deploySubpath": ".",
     "appService.showHiddenStacks": false
 }

@@ -113,7 +113,7 @@ def routeGet():
 @app.route('/time')
 def routeTime():
     global data
-    return data["timestamp"]
+    return str(data["timestamp"])
 
 @app.route('/ack')
 def routeAck():
