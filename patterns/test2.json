@@ -4,7 +4,7 @@
 		{
 			"type": "animationFill",
 			"id": "fill1",
-			"selection": [{"name":"vertical1"}],
+			"selection": [{"name":"vertical"},{"name":"line"},{"name":"hexagon"},{"name":"x"},{"name":"bed"}],
 			"colorAnimation": {
 				"type": "rgb",
 				"value": [

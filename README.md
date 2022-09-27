@@ -18,11 +18,23 @@
 - type: string - specific type of the action
 - selection: selection[]
 
-### abstract animation: action
+### abstract thread: element
 - id: string
 Inherited
 - type: string - specific type of the action
+
+### abstract animation: thread, element
+Inherited
+- id: string
+- type: string - specific type of the action
 - selection: selection[]
+
+### sequence: thread
+- elements: element[] with attribute "delay": float (waiting time)
+Override
+- type: "sequence
+Inherited
+- id: string
 
 ### fill: action
 - color: color
@@ -64,7 +76,6 @@ Override
 - type: "bezier"
 - points: point[4]
 - divisions: integer - default 10
-
 
 ### point: array[2]
 - [x, y]

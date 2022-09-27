@@ -3,12 +3,38 @@ import time, flask
 app = flask.Flask(__name__)
 
 
-data = {"active":[],"preset":{
+presets = {
     "on":[{"type": "animationStop"},{"type":"fill","color":{"type":"rgb","value":[130,80,60]},"selection":[{"name":"hexagon"}, {"name":"x"}]},{"type":"fill","color":{"type":"rgb","value":[0,0,0]},"selection":[{"name":"vertical"},{"name":"line"},{"name":"bed"}]}],
-    "daylight":[{"type": "animationStop"},{"type":"fill","color":{"type":"rgb","value":[130,80,10]},"selection":[{"name":"hexagon"}, {"name":"x"}, {"name":"line"}]},{"type":"fill","color":{"type":"rgb","value":[0,0,0]},"selection":[{"name":"vertical"},{"name":"bed"}]}],    
+    "daylight":[{"type": "animationStop"},{"type":"fill","color":{"type":"rgb","value":[0,0,0]},"selection":[{"name":"vertical"},{"name":"line"},{"name":"hexagon"},{"name":"x"},{"name":"bed"}]},{
+			"type":"sequence",
+			"id":"seq",
+			"elements":[
+				{
+					"delay": 0,
+					"type": "animationFill",
+					"id": "fill1",
+					"selection": [{"name":"hexagon"}, {"name":"x"}, {"name":"line"}],
+					"colorAnimation": {
+						"type": "rgb",
+						"value": [
+							[{"type":"transformation","points":[[0,1],  [2,130], [8, 130]]}],
+							[{"type":"transformation","points":[[0,1], [2,80], [8, 80]]}],
+							[{"type":"transformation","points":[[0,1],  [2,10], [8, 10]]}]
+						]
+					}
+				},
+				{
+					"delay": 3,
+					"type": "animationStop"
+				}
+			]
+		}
+	],    
     "night":[{"type": "animationStop"},{"type":"fill","color":{"type":"rgb","value":[0,0,1]},"selection":[{"name":"hexagon"},{"name":"bed"}, {"name":"line"}]},{"type":"fill","color":{"type":"rgb","value":[0,0,0]},"selection":[{"name":"vertical"},{"name":"x"}]}],
     "off":[{"type": "animationStop"},{"type":"fill","color":{"type":"rgb","value":[0,0,0]},"selection":[{"name":"vertical"},{"name":"line"},{"name":"hexagon"},{"name":"x"},{"name":"bed"}]}]
-},"timestamp":time.time()}
+}
+
+data = {"active":[],"timestamp":time.time()}
 
 # use rgb or hsv?
 
@@ -29,8 +55,7 @@ def routeSet():
     content[index[-1]] = value
 
     data["timestamp"] = time.time()
-    data["lastrequest"] = requestData
-    return data
+    return "Success"
 
 
 @app.route('/append', methods=["post"])
@@ -48,8 +73,7 @@ def routeAppend():
     content.append(value)
 
     data["timestamp"] = time.time()
-    data["lastrequest"] = requestData
-    return data   
+    return "Success"
 
 @app.route('/pop', methods=["post"])
 def routePop():
@@ -65,19 +89,18 @@ def routePop():
     content.pop(index[-1])
 
     data["timestamp"] = time.time()
-    data["lastrequest"] = requestData
-    return data 
+    return "Success"
 
 @app.route('/preset/<path:path>')
 def routePreset(path):
     global data
 
-    if path in data["preset"]:
-        preset = data["preset"][path]
+    if path in presets:
+        preset = presets[path]
 
         data["active"].extend(preset)
         data["timestamp"] = time.time()
-        return data
+        return "Success"
     
     return "ERROR"
 
@@ -86,6 +109,19 @@ def routeGet():
     global data
     return data
 
+
+@app.route('/time')
+def routeTime():
+    global data
+    return data["timestamp"]
+
+@app.route('/ack')
+def routeAck():
+    global data
+
+    data["active"] = []
+
+    return "Success"
 
 if __name__ == '__main__':
    app.run()
